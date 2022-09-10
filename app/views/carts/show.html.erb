@@ -1,3 +1,4 @@
+<% if !enhanced_cart.empty? %>
 <section class="cart-show">
 
   <header class="page-header">
@@ -31,7 +32,7 @@
       </tfoot>
     </table>
   </div>
-
+  
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -48,5 +49,7 @@
       <% end %>
     </div>
   </div>
-
 </section>
+<% else %>
+  <div class="alert alert-danger">Your cart is empty. To add items please navigate to the <%= link_to 'products'%> page </div>
+<% end %>
